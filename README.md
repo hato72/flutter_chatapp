@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-referencing this (https://github.com/mixigroup/2023BeginnerTrainingFlutter/)
+referencing (https://github.com/mixigroup/2023BeginnerTrainingFlutter/)
 
 ## Getting Started
 
