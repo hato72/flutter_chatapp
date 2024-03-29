@@ -2,7 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 // 以下は最初はエラーが出ますが無視して OK です！
 // `flutter pub run build_runner build` を実行するとファイルが自動生成されてエラーも出なくなります
-part 'model.g.dart';
+part 'answer.g.dart';
 
 // model にするのは必要な要素（id と model だけ〜など）だけで十分ですが，今回は一応全要素を model にしています！
 // === response example ===
