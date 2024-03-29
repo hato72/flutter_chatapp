@@ -41,7 +41,9 @@ class _ChatPageState extends State<ChatPage>{
 
   Future<void> postChat(String text) async{
     //String apikey = dotenv.get('Api_key');
-    String apikey = Env.apikey;
+    String? apikey = Env.apikey;
+    //print(apikey.runtimeType);
+
     final response = await http.post(
       Uri.parse('https://api.openai.com/v1/chat/completions'),
       headers: {
@@ -65,6 +67,15 @@ class _ChatPageState extends State<ChatPage>{
       _text = answer.choices.first.message.content;
     });
   }
+
+  // Widget createProgressIndicator() {   
+  //   return Container(     
+  //     alignment: Alignment.center,     
+  //     child: const CircularProgressIndicator(       
+  //       color: Colors.green,     
+  //     )   
+  //   ); 
+  // }
 
   @override
   Widget build(BuildContext context) {
