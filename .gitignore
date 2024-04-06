@@ -49,4 +49,4 @@ app.*.map.json
 /macos/
 lib/env.dart
 consts.dart
-lib/chat_page.dart
+flutter_chatapp/lib/chat_page.dart
