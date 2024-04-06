@@ -50,4 +50,4 @@ env
 /macos/
 lib/env.dart
 consts.dart
-lib/chat_page.dart
+#lib/chat_page.dart
