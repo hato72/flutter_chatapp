@@ -44,9 +44,10 @@ app.*.map.json
 
 
 .env
+env
 /ios/
 /android/
 /macos/
 lib/env.dart
 consts.dart
-flutter_chatapp/lib/chat_page.dart
+lib/chat_page.dart
