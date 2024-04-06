@@ -2,7 +2,9 @@
 
 A new Flutter project.
 
-referencing (https://github.com/mixigroup/2023BeginnerTrainingFlutter/)
+参考： (https://github.com/mixigroup/2023BeginnerTrainingFlutter/)
+
+上記のリポジトリや研修資料などを参照して再現実装したがエラーが起こるため実装内容を変更した
 
 ## Getting Started
 
