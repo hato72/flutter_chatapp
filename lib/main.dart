@@ -1,13 +1,19 @@
 //import 'package:flutter_chatapp/chat_page.dart';
 //import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chatapp/pages/chat_page_next.dart';
+import 'package:flutter_chatapp/voice/chat_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+//import 'package:flutter_chatapp/pages/chat_page_next.dart';
 //import 'package:flutter_chatapp/pages/chat_page.dart';
+
 
 // 中枢！main.dart の main() が最初に呼ばれる
 void main() async {
 
-  runApp(const MyApp());
+  //runApp(const MyApp());
+  runApp(
+    ProviderScope(child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +29,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
       ),
       //home: const ChatPage(title: 'Chat by ChatGPT'),
-      //home: ChatPage(),
       home: ChatPage(),
     );
   }
