@@ -52,7 +52,7 @@ class _ChatPageState extends State<ChatPage>{
         'post_img': base64Image,
       });
 
-      startLoading();
+      //startLoading();
 
       try {
         Response response = await http.post(url, body: body);
@@ -83,7 +83,7 @@ class _ChatPageState extends State<ChatPage>{
         print('Error: $e');
       }
 
-      endLoading();
+      //endLoading();
     }
   }
 

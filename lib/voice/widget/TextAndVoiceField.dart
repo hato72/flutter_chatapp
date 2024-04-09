@@ -5,8 +5,16 @@ import 'package:flutter_chatapp/voice/handler/api_handler.dart';
 import 'package:flutter_chatapp/voice/models/chat_model.dart';
 import 'package:flutter_chatapp/voice/models/chat_provider.dart';
 import 'package:flutter_chatapp/voice/handler/voice_handler.dart';
+import 'package:flutter_chatapp/voice/widget/image_toggle_button.dart';
 import 'package:flutter_chatapp/voice/widget/toggle_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+//ocr
+import 'package:image_picker_web/image_picker_web.dart';
+import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
+import 'dart:typed_data';
+import 'dart:convert';
 
 enum InputMode{
   text,
@@ -27,6 +35,14 @@ class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField>{
   final VoiceHandler voiceHandler = VoiceHandler();
   var _isReplying = false;
   var _isListening = false;
+
+  var _isSelecting = false;
+  var _isReading = false;
+  //final OCRHandler _ocrHandler = OCRHandler();
+
+  Uint8List? _pickedImage;
+  String _ocrResult = "";
+  bool isLoading = false;
 
   @override
   void initState(){
@@ -81,10 +97,72 @@ class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField>{
             sendTextMessage(message);
           },
           sendVoiceMessage: sendVoiceMessage,
+        ),
+
+        ImageToggleButton(
+          isSelecting: _isSelecting, 
+          isReading: _isReading, 
+          selectImage: pickImage, 
+          readImage: sendImage
         )
       ],
     );
   }
+
+  // void selectImage() async{
+  //   print("select image");
+  //   await pickImage();
+  // }
+
+  void pickImage() async {
+    Uint8List? imageBytes = await ImagePickerWeb.getImageAsBytes();
+    if (imageBytes != null) {
+      setState(() {
+        _pickedImage = imageBytes;
+        _ocrResult = ""; // リセット
+        _isSelecting = true;
+      });
+    }
+  }
+
+  // void readImage() async{
+  //   print("ocr image");
+  //   await _ocrHandler.sendImage();
+  // }
+
+  void sendImage() async {
+    if (_pickedImage != null) {
+      String base64Image = base64Encode(_pickedImage!);
+      Uri url = Uri.parse('http://127.0.0.1:5000/trimming');
+      String body = json.encode({
+        'post_img': base64Image,
+      });
+
+      //startLoading();
+
+      try {
+        Response response = await http.post(url, body: body);
+
+        if (response.statusCode == 200) {
+          final data = json.decode(response.body);
+          setState(() {
+            _ocrResult = data['ocr_result'];
+            _isSelecting = false;
+          });
+          sendTextMessage(_ocrResult);
+
+        } else {
+          print('エラー: ${response.statusCode}');
+        }
+      } catch (e) {
+        print('Error: $e');
+      }
+      //endLoading();
+    }
+  }
+
+
+
   void setInputMode(InputMode inputMode){
     setState(() {
       _inputMode = inputMode;
@@ -117,6 +195,7 @@ class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField>{
     // );
     setState(() {
       _isReplying = true;
+      _isReading = true;
     });
     addToChatList(message, true, DateTime.now().toString());
     addToChatList('typing...', false, 'typing');
@@ -127,6 +206,7 @@ class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField>{
     addToChatList(AIResponse, false, DateTime.now().toString());
     setState(() {
       _isReplying = false;
+      _isReading = false;
     });
   }
 
