@@ -7,21 +7,23 @@ A new Flutter project.
 上記のリポジトリや研修資料などを参照して再現実装したがエラーが起こるため実装内容を変更した。
 
 
-以下のimport文のコメントアウトを外し、その他のchat_page.dartをコメントアウトし実行
+main.dartで8行目のimport文のコメントアウトを外し、11、14行目ののimportをコメントアウトし実行
 
-`import 'package:flutter_chatapp/pages/chat_page.dart';`
+#### 画像上の文字を認識しメッセージを送信する機能を追加(少し雑なデザイン)
 
-#### 画像上の文字を認識しメッセージを送信する機能を追加
+①main.dartで11行目のimport文のコメントアウトを外し、8、14行目のimportをコメントアウトし実行
 
-以下のimport文のコメントアウトを外し、その他のchat_page.dartをコメントアウトし実行
-
-`import 'package:flutter_chatapp/pages/ocr/chat_page_next.dart';`
+②その後、(https://github.com/hato72/python_ocr) のmain.pyを実行
 
 #### 音声認識からメッセージを送信する機能を追加
 
-以下のimport文のコメントアウトを外し、その他のchat_page.dartをコメントアウトし実行
+main.dartで14行目ののimport文のコメントアウトを外し、8、11行目のimportをコメントアウトし実行
 
-`import 'package:flutter_chatapp/voice/chat_page.dart';`
+#### 音声認識処理と画像の文字認識処理を同時に実装(整形)
+
+音声認識実装の部分の手順を行い、voice/chat_page.dartの3行目をコメントアウトし、5行目のコメントアウトを外す
+
+その後、画像文字認識実装部分の手順②を行う
 
 ## Getting Started
 

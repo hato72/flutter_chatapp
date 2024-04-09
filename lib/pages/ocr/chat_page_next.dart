@@ -97,8 +97,8 @@ class _ChatPageState extends State<ChatPage>{
 
   final ChatUser _gptChatUser = ChatUser(id: '2',firstName: 'Chat', lastName: 'GPT');
 
-  List<ChatMessage> _messages = <ChatMessage>[];
-  List<ChatUser> _typingUsers = <ChatUser>[];
+  final List<ChatMessage> _messages = <ChatMessage>[];
+  final List<ChatUser> _typingUsers = <ChatUser>[];
 
   @override
   Widget build(BuildContext context){
@@ -152,11 +152,11 @@ class _ChatPageState extends State<ChatPage>{
             children: [
               ElevatedButton(
                 onPressed: _pickImage,
-                child: Text('Pick Image'),
+                child: const Text('Pick Image'),
               ),
               ElevatedButton(
                 onPressed: _sendImage,
-                child: Text('OCR'),
+                child: const Text('OCR'),
               ),
             ],
           )
@@ -170,7 +170,7 @@ class _ChatPageState extends State<ChatPage>{
       _messages.insert(0,m);
       _typingUsers.add(_gptChatUser);
     });
-    List<Map<String, dynamic>> _messagesHistory = _messages.reversed.map((m) {
+    List<Map<String, dynamic>> messagesHistory = _messages.reversed.map((m) {
       if (m.user == _currentUser) {
         return {'role': 'user', 'content': m.text};
       } else {
@@ -179,7 +179,7 @@ class _ChatPageState extends State<ChatPage>{
     }).toList();
     final request = ChatCompleteText(
       model: GptTurboChatModel(), 
-      messages: _messagesHistory,
+      messages: messagesHistory,
       maxToken: 200
     );
     final response = await _openAI.onChatCompletion(

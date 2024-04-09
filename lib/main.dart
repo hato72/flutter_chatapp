@@ -1,4 +1,3 @@
-//import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,10 +7,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 //上記の改良版：
 //import 'package:flutter_chatapp/pages/chat_page.dart';
 
-//文字認識機能の実装：
+//画像の文字認識機能の実装：
 //import 'package:flutter_chatapp/pages/ocr/chat_page_next.dart';
 
-//音声認識機能の実装：
+//音声認識機能または、音声認識機能＋画像の文字認識機能の実装：
 import 'package:flutter_chatapp/voice/chat_page.dart';
 
 
@@ -19,7 +18,7 @@ void main() async {
 
   //runApp(const MyApp());
   runApp(
-    ProviderScope(child: MyApp()),
+    const ProviderScope(child: MyApp()),
   );
 }
 
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.amber,
       ),
       //home: const ChatPage(title: 'Chat by ChatGPT'),
-      home: ChatPage(),
+      home: const ChatPage(),
     );
   }
 }

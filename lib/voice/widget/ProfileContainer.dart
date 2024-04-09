@@ -14,8 +14,8 @@ class ProfileContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: isMe? Theme.of(context).colorScheme.onPrimary : Colors.grey.shade800,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
+          topLeft: const Radius.circular(10),
+          topRight: const Radius.circular(10),
           bottomLeft: Radius.circular(isMe ? 0 : 15),
           bottomRight: Radius.circular(isMe ? 15 : 0),
         ),
