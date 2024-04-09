@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chatapp/voice/chat_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-//import 'package:flutter_chatapp/pages/chat_page_next.dart';
+//import 'package:flutter_chatapp/pages/ocr/chat_page_next.dart';
 //import 'package:flutter_chatapp/pages/chat_page.dart';
 
 
