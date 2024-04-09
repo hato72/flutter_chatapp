@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chatapp/widget/ProfileContainer.dart';
+import 'package:flutter_chatapp/voice/widget/ProfileContainer.dart';
 
 class ChatItem extends StatelessWidget {
   final String text;

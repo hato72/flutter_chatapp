@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_chatapp/handler/api_handler.dart';
-import 'package:flutter_chatapp/models/chat_model.dart';
-import 'package:flutter_chatapp/models/chat_provider.dart';
-import 'package:flutter_chatapp/handler/voice_handler.dart';
-import 'package:flutter_chatapp/widget/toggle_button.dart';
+import 'package:flutter_chatapp/voice/handler/api_handler.dart';
+import 'package:flutter_chatapp/voice/models/chat_model.dart';
+import 'package:flutter_chatapp/voice/models/chat_provider.dart';
+import 'package:flutter_chatapp/voice/handler/voice_handler.dart';
+import 'package:flutter_chatapp/voice/widget/toggle_button.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 enum InputMode{

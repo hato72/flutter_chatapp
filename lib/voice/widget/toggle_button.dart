@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chatapp/widget/TextAndVoiceField.dart';
+import 'package:flutter_chatapp/voice/widget/TextAndVoiceField.dart';
 
 class ToggleButton extends StatefulWidget{
   final VoidCallback _sendTextMessage;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chatapp/models/chat_provider.dart';
-import 'package:flutter_chatapp/widget/TextAndVoiceField.dart';
-import 'package:flutter_chatapp/widget/chat_item.dart';
+import 'package:flutter_chatapp/voice/models/chat_provider.dart';
+import 'package:flutter_chatapp/voice/widget/TextAndVoiceField.dart';
+import 'package:flutter_chatapp/voice/widget/chat_item.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-//https://www.youtube.com/watch?v=UaKFvEPjs9I&list=WL&index=2 58分くらい
+//https://www.youtube.com/watch?v=UaKFvEPjs9I&list=WL&index=2 
 
 class ChatPage extends StatelessWidget{
   const ChatPage({super.key});
