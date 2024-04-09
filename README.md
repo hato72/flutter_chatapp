@@ -7,15 +7,20 @@ A new Flutter project.
 上記のリポジトリや研修資料などを参照して再現実装したがエラーが起こるため実装内容を変更した
 
 以下のimport文のコメントアウトを外し、その他をのchat_page.dartをコメントアウト
-import 'package:flutter_chatapp/pages/chat_page.dart';
+
+`import 'package:flutter_chatapp/pages/chat_page.dart';`
 
 #### 画像上の文字を認識しメッセージを送信する機能を追加
 
-import 'package:flutter_chatapp/pages/ocr/chat_page_next.dart';
+以下のimport文のコメントアウトを外し、その他をのchat_page.dartをコメントアウト
+
+`import 'package:flutter_chatapp/pages/ocr/chat_page_next.dart';`
 
 #### 音声認識からメッセージを送信する機能を追加
 
-import 'package:flutter_chatapp/voice/chat_page.dart';
+以下のimport文のコメントアウトを外し、その他をのchat_page.dartをコメントアウト
+
+`import 'package:flutter_chatapp/voice/chat_page.dart';`
 
 ## Getting Started
 
