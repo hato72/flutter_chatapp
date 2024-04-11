@@ -45,15 +45,7 @@ A new Flutter project.
 
 </dl>
 
-## Getting Started
+#### 開発アイデア・実装メモ
+claudeは、プログラムファイルを選択した際に、ファイルが自動的に"選択したファイル名.txt"に変換されるようになっているが、chatGPTではファイルを送信することができない 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+=> 本プログラムでclaudeと同様のシステムを実装したい
