@@ -88,7 +88,7 @@ class _ChatPageState extends State<ChatPage>{
   }
 
   final _openAI = OpenAI.instance.build(
-    token: OPENAI_API_KEY,
+    token: NEXT_PUBLIC_OPENAI_API_KEY,
     baseOption: HttpSetup(receiveTimeout: const Duration(seconds: 5),),
     enableLog: true
   );
