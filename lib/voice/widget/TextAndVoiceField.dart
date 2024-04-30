@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chatapp/voice/handler/api_handler.dart';
+//import 'package:flutter_chatapp/voice/handler/api_handler.dart';
+import 'package:flutter_chatapp/voice/handler/openapi_handler.dart';
 import 'package:flutter_chatapp/voice/models/chat_model.dart';
 import 'package:flutter_chatapp/voice/models/chat_provider.dart';
 import 'package:flutter_chatapp/voice/handler/voice_handler.dart';
@@ -28,7 +29,8 @@ class TextAndVoiceField extends ConsumerStatefulWidget{
 class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField>{
   InputMode _inputMode = InputMode.voice;
   final _messageController = TextEditingController();
-  final APIHandler _openAI = APIHandler();
+  //final APIHandler _openAI = APIHandler();
+  final OpenAIService _openAPI = OpenAIService();
   final VoiceHandler voiceHandler = VoiceHandler();
   var _isReplying = false;
   var _isListening = false;
@@ -188,9 +190,10 @@ class _TextAndVoiceFieldState extends ConsumerState<TextAndVoiceField>{
     addToChatList('typing...', false, 'typing');
     setInputMode(InputMode.voice);
 
-    final AIResponse = await _openAI.getResponse(message);
+    //final AIResponse = await _openAI.getResponse(message);
+    final aiResponse = await _openAPI.chatGPTAPI(message);
     removeTyping();
-    addToChatList(AIResponse, false, DateTime.now().toString());
+    addToChatList(aiResponse, false, DateTime.now().toString());
     setState(() {
       _isReplying = false;
       //_isReading = false;
