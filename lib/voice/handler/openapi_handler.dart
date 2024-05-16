@@ -7,6 +7,10 @@ class OpenAIService {
   final List<Map<String, String>> messages = [];
 
   Future<String> chatgpt(String prompt) async {
+    if (NEXT_PUBLIC_OPENAI_API_KEY.isEmpty) {
+      return 'APIキーが指定されていません。';
+    }
+
     try {
       final res = await http.post(
         Uri.parse('https://api.openai.com/v1/chat/completions'),
@@ -40,8 +44,12 @@ class OpenAIService {
             final res = await chatGPTAPI(prompt);
             return res;
         }
+      }else if (res.statusCode == 429) {
+        return 'リクエスト上限に達しました。';
+      } else {
+        return '内部エラーが発生しました: ${res.statusCode}';
       }
-      return 'An internal error occurred';
+      //return 'An internal error occurred';
     } catch (e) {
       return e.toString();
     }
@@ -76,8 +84,12 @@ class OpenAIService {
           'content': content,
         });
         return content;
+      }else if (res.statusCode == 429) {
+        return 'リクエスト上限に達しました.';
+      } else {
+        return '内部エラーが発生しました. : ${res.statusCode}';
       }
-      return 'An internal error occurred';
+      //return 'An internal error occurred';
     } catch (e) {
       return e.toString();
     }
