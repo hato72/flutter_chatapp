@@ -3,6 +3,8 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chatapp/consts.dart';
 
+//mixiの改良版
+
 class ChatPage extends StatefulWidget{
   const ChatPage({super.key});
 
