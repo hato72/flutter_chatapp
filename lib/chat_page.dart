@@ -2,6 +2,8 @@ import 'package:flutter_chatapp/post_page.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 
+//mixiのコード
+
 class ChatPage extends StatefulWidget {
   // title を受け取ってるね👀
   const ChatPage({super.key, required this.title});
