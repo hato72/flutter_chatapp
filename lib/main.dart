@@ -5,13 +5,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 //import 'package:flutter_chatapp/chat_page.dart';
 
 //上記の改良版：
-//import 'package:flutter_chatapp/pages/chat_page.dart';
+//import 'package:flutter_chatapp/pages/chat_page_next.dart';
 
 //画像の文字認識機能の実装：
-//import 'package:flutter_chatapp/pages/ocr/chat_page_next.dart';
+//import 'package:flutter_chatapp/pages/ocr/chat_page_ocr.dart';
 
 //音声認識機能または、音声認識機能＋画像の文字認識機能の実装：
-import 'package:flutter_chatapp/voice/chat_page.dart';
+import 'package:flutter_chatapp/voice/OCRVoicechat_page.dart';
 
 
 void main() async {
